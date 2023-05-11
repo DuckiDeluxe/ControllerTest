@@ -1,4 +1,35 @@
 <h1>Xbox Controller</h1>
 <p>Plug in your XBOX controller via USB and refresh the page to activate the controller</p>
 <div id="pad"></div>
+ <div class="field">
+      <label class="label">Intensity</label>
+      <div class="control">
+        <input
+          class="slider"
+          type="range"
+          min=0
+          max=100
+          v-model="magnitude">
+      </div>
 
+     <div class="field">
+      <label class="label">Control</label>
+      <div class="control">
+        <button
+          class="button is-primary"
+          type="button"
+          @click="toggleGo">
+          {{ button }}
+        </button>
+      </div>
+    </div>
+  </template>
+  <div v-else>
+    <h4 class="title">
+      No controller found
+    </h4>
+    <h5 class="title is-5">
+      You may need to press a button on your controller, if it's connected
+    </h5>
+  </div>
+</div>
